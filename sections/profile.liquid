@@ -1,0 +1,38 @@
+<div class="user_profile">
+    <img src="{{ section.settings.user_img | img_url: '300x300' }}" alt="">
+    <h3>
+        {{ section.settings.user_name }}
+    </h3>
+    <p>
+        {{ section.settings.user_bio }}
+    </p>
+</div>
+
+{% schema %}
+{
+    "name": "User profile",
+    "settings": [
+        {
+            "id": "user_img",
+            "type": "image_picker",
+            "label": "User photo"
+        },
+        {
+            "id": "user_name",
+            "type": "text",
+            "label": "Full name"
+        },
+        {
+            "id": "user_bio",
+            "type": "richtext",
+            "label": "Bio"
+        }
+    ],
+    "presets": [
+        {
+            "category": "Customized sections",
+            "name": "User profile"
+        }
+    ]
+}
+{% endschema %}
